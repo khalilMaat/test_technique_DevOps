@@ -1,0 +1,33 @@
+---
+- name: Playbook To Deploy Tomcat server using Ansible
+  hosts: localhost
+  gather_facts: false
+  become: true
+  vars:
+    jvm_heap_size:
+      DEV: "256m"
+      PROD: "512m"
+
+  tasks:
+    - name: Install openjdk-11-jdk.
+      apt:
+        name:
+          - openjdk-11-jdk
+          - tomcat9
+        state: present
+
+    - name: Configure JVM heap size.
+      lineinfile:
+        path: /etc/default/tomcat9
+        regexp: '^JAVA_OPTS='
+        line: 'JAVA_OPTS="-Xms{{ jvm_heap_size[env] }} -Xmx{{ jvm_heap_size[env] }}"'
+
+    - name: Deploy sample.war.
+      copy:
+        src: /data/sample.war
+        dest: /var/lib/tomcat9/webapps/sample.war
+
+    - name: Start tomcat server.
+      service:
+        name: tomcat9
+        state: restarted
