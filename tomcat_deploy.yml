@@ -9,6 +9,10 @@
       PROD: "512m"
 
   tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        
     - name: Install openjdk-11-jdk.
       apt:
         name:
@@ -29,5 +33,6 @@
 
     - name: Start tomcat server.
       service:
-        name: tomcat9
-        state: restarted
+        name: tomcat
+        state: started
+        enabled: true

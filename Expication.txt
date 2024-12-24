@@ -1,0 +1,11 @@
+1/ Dockerfile
+-I use FROM debian:bullseye instead of debian:jessie because have problem with support.
+- I install requirements packages like ansible and curl
+- expose port of app
+
+2/ tomcat_deploy.sh to build docker images and run container then execute the tomcat_test.sh
+
+3/ tomcat_test.sh to run some tests and run ansible playbook and Check application .
+
+
+

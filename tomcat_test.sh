@@ -36,6 +36,6 @@ echo "---------------------------"
 curl http://localhost:8080/sample/
 echo ""
 
-echo "Check tomcat logs"
-echo "-----------------"
-cat /var/log/tomcat9/catalina.out
+# echo "Check tomcat logs"
+# echo "-----------------"
+# cat /var/log/tomcat9/catalina.out
