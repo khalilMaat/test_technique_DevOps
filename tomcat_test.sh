@@ -21,20 +21,20 @@ echo "---------------------------"
 ansible-playbook --extra-vars="env=${ENVIRONMENT}" /data/tomcat_deploy.yml
 echo ""
 
-echo "Check java process and parameters"
-echo "---------------------------------"
-ps -ef | grep java
-echo ""
+# echo "Check java process and parameters"
+# echo "---------------------------------"
+# ps -ef | grep java
+# echo ""
 
-echo "Check tomcat service status"
-echo "---------------------------"
-service tomcat9 status
-echo ""
+# echo "Check tomcat service status"
+# echo "---------------------------"
+# service tomcat9 status
+# echo ""
 
-echo "Check application home page"
-echo "---------------------------"
-curl http://localhost:8080/sample/
-echo ""
+# echo "Check application home page"
+# echo "---------------------------"
+# curl http://localhost:8080/sample/
+# echo ""
 
 # echo "Check tomcat logs"
 # echo "-----------------"

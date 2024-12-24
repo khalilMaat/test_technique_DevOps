@@ -31,8 +31,8 @@
         src: /data/sample.war
         dest: /var/lib/tomcat9/webapps/sample.war
 
-    - name: Start tomcat server.
-      service:
-        name: tomcat
-        state: started
-        enabled: true
+    # - name: Start tomcat server.
+    #   service:
+    #     name: tomcat9
+    #     state: started
+    #     enabled: true

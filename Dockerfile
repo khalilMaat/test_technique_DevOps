@@ -28,6 +28,5 @@ RUN apt-get update -y && \
 
 EXPOSE 8080
 
-ENTRYPOINT ["sh", "-c", "/data/tomcat_test.sh $ENVIRONMENT"]
-
+ENTRYPOINT ["tail","-f","/dev/null"]
 

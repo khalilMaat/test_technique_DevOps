@@ -19,4 +19,4 @@ echo "Build the docker image..."
 docker build -t tomcat_image .
 
 echo "Run the docker container..." 
-docker run -d --name tomcat_server --privileged=true -p 8080:8080 -v /home/ubuntu/Desktop/deploy:/data -e ENVIRONMENT=DEV tomcat_image
+docker run -d --name tomcat_server --privileged=true -p 8080:8080 -v /home/ubuntu/Desktop/deploy:/data tomcat_image /bin/bash -c "/data/tomcat_test.sh ${ENVIRONMENT}"
